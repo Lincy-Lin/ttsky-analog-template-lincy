@@ -31,18 +31,18 @@ jobs:
           verilog_path: src/top_level_design.v
           pdk: sky130A
 
-precheck:
-  needs: gds
-  runs-on: ubuntu-24.04
-  steps:
-    - name: Run Tiny Tapeout Precheck
-      uses: TinyTapeout/tt-gds-action/precheck@ttsky26a
+  precheck:
+    needs: gds
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Run Tiny Tapeout Precheck
+        uses: TinyTapeout/tt-gds-action/precheck@ttsky26a
 
-viewer:
-  needs: gds
-  runs-on: ubuntu-24.04
-  permissions:
-    pages: write
-    id-token: write
-  steps:
-    - uses: TinyTapeout/tt-gds-action/viewer@ttsky26a
+  viewer:
+    needs: gds
+    runs-on: ubuntu-24.04
+    permissions:
+      pages: write
+      id-token: write
+    steps:
+      - uses: TinyTapeout/tt-gds-action/viewer@ttsky26a

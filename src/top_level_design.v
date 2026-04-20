@@ -1,4 +1,6 @@
 module tt_um_lincy_eyeriss (
+    input  wire        VPWR,
+    input  wire        VGND,
     input  wire        clk,
     input  wire        rst_n,
 

@@ -1,4 +1,4 @@
-module top_level_design (
+module tt_um_lincy_eyeriss (
     input  wire        clk,
     input  wire        rst_n,
 

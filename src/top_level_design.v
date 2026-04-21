@@ -1,4 +1,4 @@
-module tt_um_lincy_eyeriss (
+module tt_um_eyeriss (
     input  wire        VPWR,
     input  wire        VGND,
     input  wire        clk,

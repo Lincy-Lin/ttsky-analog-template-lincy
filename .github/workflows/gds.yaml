@@ -15,7 +15,7 @@ jobs:
 
       - name: Reassemble and decompress GDS
         run: |
-          cat gds/tt_um_eyeriss.gds.gz.aa gds/tt_um_eyeriss.gds.gz.ab | gunzip > gds/tt_um_eyeriss.gds
+          cat gds/tt_um_motion_detect.gds.gz.aa gds/tt_um_motion_detect.gds.gz.ab | gunzip > gds/tt_um_motion_detect.gds
 
       - name: Read top module name
         id: top_module

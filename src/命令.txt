@@ -1,0 +1,13 @@
+cat > /openlane/designs/EdgeDetect/config.json << 'EOF'
+{
+    "DESIGN_NAME": "tt_um_edge_detect",
+    "VERILOG_FILES": "dir::src/*.v",
+    "CLOCK_PORT": "clk",
+    "CLOCK_PERIOD": 10.0,
+    "DIE_AREA": "0 0 160 100",
+    "FP_SIZING": "absolute",
+    "FP_CORE_UTIL": 40
+}
+EOF
+
+./flow.tcl -design EdgeDetect

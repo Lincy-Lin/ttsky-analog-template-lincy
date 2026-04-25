@@ -1,9 +1,9 @@
 # Tiny Tapeout project information
 project:
-  title:        "CNN Accelerator"      # Project title
+  title:        "Motion Detect"      # Project title
   author:       "Lincy"      # Your name
   discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
-  description:  "CNN Accelerator"      # One line description of what your project does
+  description:  "Motion Detection"      # One line description of what your project does
   language:     "Analog" # other examples include Verilog, Amaranth, VHDL, etc
   clock_hz:     0       # Clock frequency in Hz (or 0 if not applicable)
 
@@ -19,38 +19,41 @@ project:
 
   # List your project's source files here. Source files must be in ./src and you must list each source file separately, one per line:
   source_files:        
-    - "top_level_design.v"
-    - "PE.v"
-    - "pe_top.v"
-    - "sync_fifo.v"
-    - "triple_fifo_adder.v"
+    - "tt_um_motion_detect.v"
+    - "fifo.v"
+    - "grayscale.v"
+    - "grayscale_top.v"
+    - "background_subtract.v"
+    - "background_subtract_top.v"
+    - "highlight.v"
+    - "highlight_top.v"
 
 # The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
 # This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
 pinout:
   # Inputs
-  ui[0]: "clk"
-  ui[1]: "rst_n"
-  ui[2]: "data_in"
-  ui[3]: "wr_en"
-  ui[4]: "rd_en"
-  ui[5]: ""
-  ui[6]: ""
+  ui[0]: "clock"
+  ui[1]: "reset"
+  ui[2]: "frame_wr_en"
+  ui[3]: "frame_din"
+  ui[4]: "background_wr_en"
+  ui[5]: "background_din"
+  ui[6]: "output_rd_en"
   ui[7]: ""
 
   # Outputs
-  uo[0]: "data_out"
-  uo[1]: "full"
-  uo[2]: "empty"
-  uo[3]: ""
+  uo[0]: "frame_full"
+  uo[1]: "background_full"
+  uo[2]: "output_dout"
+  uo[3]: "output_empty"
   uo[4]: ""
   uo[5]: ""
   uo[6]: ""
   uo[7]: ""
 
   # Bidirectional pins
-  uio[0]: "VPWR"
-  uio[1]: "VGDN"
+  uio[0]: "VGND"
+  uio[1]: "VDPWR"
   uio[2]: ""
   uio[3]: ""
   uio[4]: ""
